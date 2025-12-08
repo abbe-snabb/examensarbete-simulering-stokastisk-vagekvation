@@ -1,0 +1,14 @@
+services:
+  gridap-lab:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./work:/work
+    environment:
+      - JULIA_NUM_THREADS=auto
+    command: >
+      jupyter lab --ip=0.0.0.0 --no-browser --allow-root
+      --IdentityProvider.token=
+      --notebook-dir=/work
+
