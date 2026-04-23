@@ -7,8 +7,9 @@ services:
       - ./work:/work
     environment:
       - JULIA_NUM_THREADS=auto
+    mem_limit: 24g
+    memswap_limit: 28g
     command: >
       jupyter lab --ip=0.0.0.0 --no-browser --allow-root
       --IdentityProvider.token=
       --notebook-dir=/work
-
